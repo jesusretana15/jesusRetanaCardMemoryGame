@@ -29,7 +29,7 @@ function browsersyncStart(cd) {
 
 function browsersyncReload(cd) {
     bundleCSS();
-    bundleProyect();
+    bundleJS();
     browsersync.reload();
     cd();
 };
@@ -48,7 +48,7 @@ function cleanZip() {
         .pipe(clean());
 };
 
-const bundleProyect = async function () {
+const bundleJS = async function () {
 
     var input = 'js/main.js';;
     console.log('-> BUNDLE PROYECT');
@@ -105,16 +105,18 @@ function firebase(cb) {
 
 exports.deploy = series(
     bundleCSS,
-    bundleProyect,
+    bundleJS,
     firebase
 );
 
 exports.bundle = series(
     bundleCSS,
-    bundleProyect
+    bundleJS
 );
 
 exports.run = series(
+    bundleCSS,
+    bundleJS,
     browsersyncStart,
     watchTask
 );
