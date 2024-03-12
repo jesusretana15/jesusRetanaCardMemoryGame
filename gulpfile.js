@@ -7,6 +7,8 @@ const { rollup } = require('rollup');
 const { terser } = require('rollup-plugin-terser');
 const cleanCSS = require('clean-css');
 const concat = require('gulp-concat');
+var exec = require('child_process').exec;
+var fs = require('fs');
 const isDevelopment = true;
 
 function copyFiles() {
@@ -92,6 +94,20 @@ function bundleCSS() {
         })
         .pipe(dest('./'));
 };
+
+function firebase(cb) {
+    exec('firebase deploy', function (err, stdout, stderr) {
+        console.log(stdout);
+        console.log(stderr);
+        cb(err);
+    });
+}
+
+exports.deploy = series(
+    bundleCSS,
+    bundleProyect,
+    firebase
+);
 
 exports.bundle = series(
     bundleCSS,
