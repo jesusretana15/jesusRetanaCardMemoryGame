@@ -1,11 +1,8 @@
-/*
-Function bla bla bla
-*/
+import { GameManager } from "./managers/gameManager.js";
 
-import { Person } from './persona.js';
 window.onload = init;
 
 function init() {
     console.log('init');
-    let person = new Person('esteban');
+    let gameManager = new GameManager ;
 };
