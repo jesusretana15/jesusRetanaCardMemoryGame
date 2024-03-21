@@ -1,11 +1,17 @@
-import { span } from "../../libs/html.js";
-import { View } from "../../views/view.js";
+import { div, span } from "../../libs/html.js";
+import { BaseView } from "../../views/baseView.js";
 
-export class LoadingView extends View{
+
+export class LoadingView extends BaseView{
     constructor(parent, controller){
         super(parent, controller);
-        this.container.className = "loadingController"
+        this.className = "loadingView"
+        // this.innerHTML = 'Loading...'
+        let spinner = div ({className:'loadingView-spinner'},this)
+        span({innerHTML:'loading'},this)
 
-        span({innerHTML:'LOADING...'},this.container)
+        gsap.to(spinner,{rotation:360,duration:2,repeat:-1})
     }
 }
+
+customElements.define('loading-view',LoadingView);

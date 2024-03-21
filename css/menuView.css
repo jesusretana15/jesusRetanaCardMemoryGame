@@ -1,8 +1,8 @@
-.loadingController{
+.menuView{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: bisque;
+    background-color: rgb(232, 183, 123);
     width: 100%;
     height: 100%;
 }
