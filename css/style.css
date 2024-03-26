@@ -52,3 +52,15 @@ h2 {
     background-color: blueviolet;
 
 }
+
+.gameButton{
+    height: 66px;
+    width: 90%;
+    background-color: #D2B48C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid black 1.5px;
+    margin-bottom: 10px;
+}

@@ -8,7 +8,9 @@ export class GameManager {
         this.mainContainer = div({id:'mainContainer',className:'mainContainer'},document.body);
         this.navContainer = div({id:'navContainer',className:'navContainer'},this.mainContainer);
         this.contentContainer = div({id:'contentContainer',className:'contentContainer'},this.mainContainer);
-        this.currentController = null;         
+        this.currentController = null;   
+        this.menuController = null;     
+
 
         this.mainContainer.addEventListener('on-loading-completed',(event) => {
             this.loadingComplete();
@@ -35,10 +37,13 @@ export class GameManager {
                 break;
         
             case MENU_STATE:
-                this.currentController = new MenuController(this.contentContainer)
+                this.menuController = new MenuController(this.contentContainer)
                 break;
             case RESULTS_STATE:
                 
+                break;
+            case LOGIN_STATE:
+
                 break;
         
             default:
@@ -51,3 +56,4 @@ export class GameManager {
 export const LOADING_STATE = 0
 export const MENU_STATE = 1
 export const RESULTS_STATE = 2
+export const LOGIN_STATE = 3
