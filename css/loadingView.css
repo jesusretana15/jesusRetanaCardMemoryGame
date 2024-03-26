@@ -11,6 +11,6 @@
 .loadingView-spinner{
     height: 150px;
     width: 150px;
-    background: url('../imgs/star-svgrepo-com.png');
+    background: url('../assets/imgs/star-svgrepo-com.png');
     background-size: contain;
 }
