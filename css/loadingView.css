@@ -9,8 +9,16 @@
 }
 
 .loadingView-spinner{
-    height: 150px;
-    width: 150px;
+    position: absolute;
+    top:35%;
+    height: 125px;
+    width: 125px;
     background: url('../assets/imgs/star-svgrepo-com.png');
     background-size: contain;
+}
+
+.loadingText{
+    font-family: "Karantina", system-ui;
+    font-size: 50px;
+    font-weight: 500;
 }

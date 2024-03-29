@@ -13,12 +13,15 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #000000d2;
 }
 
 h1 {
     color: var(--primary-color)
-}
+} innerHTML
 
 h2 {
     color: var(--secondary-color)
@@ -48,9 +51,13 @@ h2 {
 
 .navContainer{
     width: 100%;
-    height: 60px;
-    background-color: blueviolet;
-
+    height: 70px;
+    background-color: #D2B48C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .gameButton{
@@ -62,5 +69,17 @@ h2 {
     align-items: center;
     border-radius: 10px;
     border: solid black 1.5px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.btnsDIVTwo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:77%
 }
