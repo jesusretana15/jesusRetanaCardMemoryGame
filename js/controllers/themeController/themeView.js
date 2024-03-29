@@ -8,7 +8,7 @@ export class ThemeView extends BaseView{
         this.navBar = document.getElementById("navContainer")
         this.navBar.style.background="#D2B48C"
         this.navBar.innerHTML = "CATEGORIA"
-        this.className = "menuView"
+        this.className = "themeView"
         let btnsDIV = div({className:'btnsDIVTwo'},this)
 
 

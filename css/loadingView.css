@@ -10,7 +10,7 @@
 
 .loadingView-spinner{
     position: absolute;
-    top:35%;
+    top:33%;
     height: 125px;
     width: 125px;
     background: url('../assets/imgs/star-svgrepo-com.png');

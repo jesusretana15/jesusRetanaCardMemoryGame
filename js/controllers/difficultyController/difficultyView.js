@@ -8,7 +8,7 @@ export class DifficultyView extends BaseView{
         this.navBar = document.getElementById("navContainer")
         this.navBar.style.background="#D2B48C"
         this.navBar.innerHTML = "DIFICULTAD"
-        this.className = "menuView"
+        this.className = "difficultyView"
         let btnsDIV = div({className:'btnsDIVTwo'},this)
 
 

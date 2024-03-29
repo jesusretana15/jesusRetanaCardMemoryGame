@@ -8,7 +8,7 @@ export class LoginView extends BaseView{
         this.navBar = document.getElementById("navContainer")
         this.navBar.style.background="#D2B48C"
         this.navBar.innerHTML = "INICIO SESION"
-        this.className = "menuView"
+        this.className = "loginView"
         let btnsDIV = div({className:'btnsDIVTwo'},this)
 
 
