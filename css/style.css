@@ -17,6 +17,7 @@
     font-optical-sizing: auto;
     font-style: normal;
     color: #000000d2;
+    overflow: hidden;
 }
 
 h1 {
