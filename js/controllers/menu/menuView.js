@@ -5,9 +5,6 @@ import { GameButton } from "../../views/gameButton.js";
 export class MenuView extends BaseView{
     constructor(parent, controller){+
         super(parent, controller);
-        this.navBar = document.getElementById("navContainer")
-        this.navBar.style.background="#D2B48C"
-        this.navBar.innerHTML = "MENU"
         this.className = "menuView"
         span({innerHTML:'CHROMOJI CHALLENGE',className:"menuTittle"},this);
         span({innerHTML:"¡Demuestra tu habilidad combinando colores y emojis!",className:"menuDesc"},this);

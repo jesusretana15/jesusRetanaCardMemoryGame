@@ -1,8 +1,38 @@
-.gameView{
+/* .gameView{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: bisque;
     width: 100%;
     height: 100%;
+} */
+
+.playView{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    background-color: bisque;
+    width: 100%;
+    height: 100%;
+}
+
+.playView-cardsContainer{
+    position: absolute;
+    top: 17%;
+    background-color: rgb(232, 209, 181);
+    width: 95%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.timeContainer, .clickContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
