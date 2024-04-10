@@ -5,7 +5,16 @@ import { GameButton } from "../../views/gameButton.js";
 export class DifficultyView extends BaseView{
     constructor(parent, controller){+
         super(parent, controller);
-         
+
+        let themesText = span({className:'Subheader',innerHTML:"Elegir dificultad"},this)
+        let btnsDificultyDIV = div({className:'btnsDificultyDIV'},this)
+        let level1= span({className:'dificultyBTN',innerHTML:"MUY FACIL 😴"},btnsDificultyDIV)
+        let level2= span({className:'dificultyBTN',innerHTML:"FACIL 😇"},btnsDificultyDIV)
+        let level3= span({className:'dificultyBTN',innerHTML:"NORMAL 🥸"},btnsDificultyDIV)
+        let level4= span({className:'dificultyBTN',innerHTML:"DIFICIL 🤠"},btnsDificultyDIV)
+
+
+
         this.className = "difficultyView"
         let btnsDIV = div({className:'btnsDIVTwo'},this)
 

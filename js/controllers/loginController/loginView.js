@@ -1,10 +1,19 @@
-import { div, span } from "../../libs/html.js";
+import { div, input, span } from "../../libs/html.js";
 import { GAME_STATE, LOGIN_STATE, MENU_STATE } from "../../managers/gameManager.js";
 import { BaseView } from "../../views/baseView.js";
 import { GameButton } from "../../views/gameButton.js";
 export class LoginView extends BaseView{
-    constructor(parent, controller){+
+    constructor(parent, controller){
         super(parent, controller);
+        let loginView = div({className:"loginViewDIV"},this)
+        let themesText = span({className:'Subheader',innerHTML:"Por favor ingrese su usuario para registrar sus puntajes"},loginView)
+        let emoji = span({className:'emojiLogin',innerHTML:"👨🏽‍💻"},loginView)
+        let input = document.createElement('input')
+        input.type = "text"
+        input.placeholder = "INGRESAR USUARIO"
+        input.classList.add("inputLogin")
+        loginView.appendChild(input);
+
         this.className = "loginView"
         let btnsDIV = div({className:'btnsDIVTwo'},this)
 

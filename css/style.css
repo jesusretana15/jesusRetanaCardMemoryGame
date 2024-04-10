@@ -51,6 +51,7 @@ h2 {
 }
 
 .navContainer{
+    color: rgba(0, 0, 0, 0.671);
     width: 100%;
     height: 70px;
     background-color: #D2B48C;
@@ -62,6 +63,7 @@ h2 {
 }
 
 .gameButton{
+    color: rgba(0, 0, 0, 0.671);
     height: 50px;
     width: 90%;
     background-color: #D2B48C;

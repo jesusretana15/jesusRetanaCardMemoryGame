@@ -1,0 +1,39 @@
+.loginViewDIV{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    flex-direction: column;
+}
+
+.Subheader{
+    text-align: center;
+}
+
+
+.emojiLogin{
+    padding-top: 50px;
+    font-size: 120px;
+}
+
+.inputLogin{
+    text-align: center; 
+    margin-top: 30px;
+    color: rgba(0, 0, 0, 0.671);
+    height: 50px;
+    width: 90%;
+    background-color:  rgb(232, 209, 181);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid black 1.5px;
+    margin-bottom: 10px;
+    font-size: 27px;
+    font-weight: bold;
+
+}
+
+.inputLogin:focus {
+    outline:0;
+  }

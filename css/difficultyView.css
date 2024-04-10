@@ -1,0 +1,23 @@
+.btnsDificultyDIV{
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.dificultyBTN{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color:  rgba(0, 0, 0, 0.671);
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+    background-color: rgb(232, 209, 181);
+    border: 1px rgba(0, 0, 0, 0.671) solid;
+    border-radius: 5px;
+    width: 70%;
+}
