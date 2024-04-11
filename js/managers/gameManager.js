@@ -26,7 +26,7 @@ export class GameManager {
         })
 
         // this.goto(LOADING_STATE)
-        this.goto(LOGIN_STATE)
+        this.goto(LOADING_STATE)
 
     }
 
