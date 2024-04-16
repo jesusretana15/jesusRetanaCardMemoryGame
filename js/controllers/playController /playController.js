@@ -13,17 +13,26 @@ export class PlayController extends Controller{
         this.timesShowingTimer = null;
         this.playTime = 0;
         this.playClicks = 0;
+        this.gamePlayTimer =null;
+        
+
+
     }
 
     show(cards){
         this.cards = cards
         console.log(cards)
         this.view.showCards(this.cards)
+
+        this.gamePlayTimer = window.setInterval(() => {
+            this.playTime += 1; 
+            this.triggerPlayGameTimeEvent();
+        },1000)
     }
 
     onCardSelection(cards){
         this.playClicks += 1;
-        console.log(this.playClicks)
+        this.triggerPlayClicksEvent()
         let Card1 = null
         let Card2 = null
 
@@ -51,7 +60,9 @@ export class PlayController extends Controller{
 
                 if (this.isGameComplete()){
                     console.log("gameComplete")
-        
+                    window.clearInterval(this.gamePlayTimer);
+                    this.view.timeTitle.innetHTTML = this.playTime
+                    
                 }
             }, 500);
             
@@ -79,6 +90,33 @@ export class PlayController extends Controller{
             return true;
         }
 
-       
+    triggerPlayGameTimeEvent(){
+        let event = new CustomEvent('update-play-game-time', {
+            detail: {
+                time: this.playTime
+            },
+            bubbles:true,
+            cancelable:true,
+            composed:false
+        });
+        this.view.dispatchEvent(event)
+    }  
+
+    triggerPlayClicksEvent(){
+        let event = new CustomEvent('update-game-clicks', {
+            detail: {
+                time: this.playClicks
+            },
+            bubbles:true,
+            cancelable:true,
+            composed:false
+        });
+        this.view.dispatchEvent(event)
+    }  
+
+    delete(){
+        super.delete();
+        window.clearInterval(this.gamePlayTimer);
+    }
     
 }

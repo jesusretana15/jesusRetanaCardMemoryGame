@@ -7,4 +7,9 @@ export class LoginController extends Controller{
         super(parent);
         this.view = new LoginView(parent ,this) 
     }
+
+
+    saveUser(userName){
+        localStorage.setItem('username', userName)
+    }
 }

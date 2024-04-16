@@ -1,5 +1,5 @@
 .btnsDificultyDIV{
-    margin-top: 7%;
+    margin-top: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,15 +7,15 @@
 }
 
 .dificultyBTN{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-weight: bold;
     color:  rgba(0, 0, 0, 0.671);
     font-size: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 65px;
+    height: 75px;
     background-color: rgb(232, 209, 181);
     border: 1px rgba(0, 0, 0, 0.671) solid;
     border-radius: 5px;

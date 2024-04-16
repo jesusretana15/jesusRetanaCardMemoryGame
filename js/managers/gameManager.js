@@ -25,7 +25,9 @@ export class GameManager {
             this.goto(event.detail.state)
         })
 
+        
         // this.goto(LOADING_STATE)
+        this.checkLocalStorage()
         this.goto(LOADING_STATE)
 
     }
@@ -89,6 +91,15 @@ export class GameManager {
         }
        
     }
+
+    checkLocalStorage(){
+      if (!localStorage.getItem('theme')) {
+        localStorage.setItem('theme',THEME_PLANTS)
+      } 
+      if (!localStorage.getItem('difficulty')) {
+        localStorage.setItem('difficulty', DIFFICULTY_EASY)
+      } 
+    }
 }
 
 export const LOADING_STATE = 0;
@@ -99,3 +110,13 @@ export const THEME_STATE = 4;
 export const DIFFICULTY_STATE = 5;
 export const SCORES_STATE = 6;
 export const GAME_STATE = 7;
+
+export const THEME_FACES = 'faces'
+export const THEME_CLOTHES = 'clothes'
+export const THEME_PLANTS = 'flowers'
+export const THEME_FOOD = 'foods'
+
+export const DIFFICULTY_VERY_EASY = 4;
+export const DIFFICULTY_EASY = 8;
+export const DIFFICULTY_NORMAL = 10;
+export const DIFFICULTY_HARD = 12;

@@ -18,8 +18,3 @@ export const element = function(tag, attributes, parent) {
     }
     return el;
 }
-
-
-export const input = function(attributes, parent) {
-    return element('input', attributes, parent);
-}

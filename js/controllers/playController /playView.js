@@ -18,6 +18,13 @@ export class PlayView extends BaseView{
         this.timeTitle = span({className:"playView-timeLable",innerHTML:"0"},this.timeContainer)
         this.clicksTitle = span({className:"playView-clickLable",innerHTML:"0"},this.clickContainer)
 
+        this.addEventListener('update-play-game-time',(event) => {
+            this.timeTitle.innerHTML = event.detail.time;
+        })
+        this.addEventListener('update-game-clicks',(event) => {
+            this.clicksTitle.innerHTML = event.detail.time;
+        })
+
 
         this.cardsViews = []
 
