@@ -31,16 +31,6 @@ export class ThemeView extends BaseView{
 
 
 
-        // let cat1 = div({className:'boxTheme',innerHTML:"🤠"},divCategorias1)
-        // let catname1= span({className:'cattext',innerHTML:"emojis"},cat1)
-        // let cat2 = div({className:'boxTheme',innerHTML:"🧥"},divCategorias1)
-        // let catname2= span({className:'cattext',innerHTML:"ropa"},cat2)
-        // let cat3 = div({className:'boxTheme',innerHTML:"🌸"},divCategorias2)
-        // let catname3= span({className:'cattext',innerHTML:"plantas"},cat3)
-        // let cat4 = div({className:'boxTheme',innerHTML:"🍍"},divCategorias2)
-        // let catname4= span({className:'cattext',innerHTML:"comidas"},cat4)
-
-
         new GameButton (btnsDIV,"JUGAR", () => {
             let event = new CustomEvent('goto-state',{
                 detail:{

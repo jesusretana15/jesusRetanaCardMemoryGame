@@ -3,6 +3,7 @@ import { LoadingController } from "../controllers/loading/loadingController.js";
 import { LoginController } from "../controllers/loginController/loginController.js";
 import { MenuController } from "../controllers/menu/menuController.js";
 import { PlayController } from "../controllers/playController /playController.js";
+import { SavingController } from "../controllers/savingController/savingController.js";
 import { ScoresController } from "../controllers/scoresController/scoresController.js";
 import { ThemeController } from "../controllers/themeController/themeController.js";
 import { div } from "../libs/html.js";
@@ -54,6 +55,10 @@ export class GameManager {
             case MENU_STATE:
                 this.navContainer.innerHTML = "MENU"
                 this.menuController = new MenuController(this.contentContainer)
+                break;
+            case SAVING_GAME:
+                this.navContainer.innerHTML = "GUARDANDO"
+                this.menuController = new SavingController(this.contentContainer)
                 break;
             case RESULTS_STATE:
                 // this.menuController.delete();
@@ -110,6 +115,7 @@ export const THEME_STATE = 4;
 export const DIFFICULTY_STATE = 5;
 export const SCORES_STATE = 6;
 export const GAME_STATE = 7;
+export const SAVING_GAME = 8;
 
 export const THEME_FACES = 'faces'
 export const THEME_CLOTHES = 'clothes'

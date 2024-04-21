@@ -18,5 +18,17 @@ export class PlayService {
         })
     }
 
+    sendScore(score){
+        let config = {
+            method: 'POST',
+            body: JSON.stringify(score)
+        }
+
+        fetch('https://jesusretanacardmemorygame-default-rtdb.firebaseio.com/data.json',config).then(response => {
+
+        })
+    }
+
 
 }
+

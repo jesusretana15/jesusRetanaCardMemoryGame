@@ -46,7 +46,12 @@ export class LoginView extends BaseView{
         if (userName !== '') {
             this.controller.saveUser(userName)
         }else{
-            alert("Usuario no ingresado, no se guardarán los resultados")
+            if (localStorage.getItem('username')) {
+                console.log("usuario ya guardado")
+            } else {
+                alert("Usuario no ingresado, no se guardarán los resultados")
+            }
+            
         }
     }
 }

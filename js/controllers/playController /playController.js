@@ -1,3 +1,4 @@
+import { SAVING_GAME } from "../../managers/gameManager.js";
 import { Controller } from "../controller.js";
 import { CardView } from "./cardView.js";
 import { PlayService } from "./playService.js";
@@ -59,10 +60,18 @@ export class PlayController extends Controller{
                 this.view.resetCards();
 
                 if (this.isGameComplete()){
-                    console.log("gameComplete")
+                    this.saveScore()
                     window.clearInterval(this.gamePlayTimer);
                     this.view.timeTitle.innetHTTML = this.playTime
-                    
+                    let event = new CustomEvent('goto-state',{
+                        detail:{
+                            state:SAVING_GAME
+                        },
+                        bubbles:true,
+                        cancelable:true,
+                        composed:false
+                    });
+                    this.view.dispatchEvent(event);
                 }
             }, 500);
             
@@ -88,6 +97,7 @@ export class PlayController extends Controller{
             }
 
             return true;
+
         }
 
     triggerPlayGameTimeEvent(){
@@ -117,6 +127,20 @@ export class PlayController extends Controller{
     delete(){
         super.delete();
         window.clearInterval(this.gamePlayTimer);
+    }
+
+    saveScore(){
+        console.log("save score")
+        let difficulty = localStorage.getItem('difficulty')
+        let user = localStorage.getItem('username')
+
+        if (user === null) {
+            console.log("not saving user")
+        } else {
+            console.log(`saving ${user} data`)
+            this.service.sendScore({username: user , difficulty: difficulty , clicks: this.playClicks, time: this.playTime, score: (this.playTime + this.playClicks)})
+        }
+        
     }
     
 }
