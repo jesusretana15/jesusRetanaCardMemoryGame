@@ -2,8 +2,9 @@ import { Controller } from "../controller.js";
 import { SavingView, ScoresView  } from "./savingView.js";
 
 export class SavingController extends Controller{
-     constructor(parent){
+     constructor(parent,time,clicks,scores){
         super(parent);
-        this.view = new SavingView(parent, this);
+        console.log(time, clicks, scores)
+        this.view = new SavingView(parent,this, time,clicks,scores);
     }
 }

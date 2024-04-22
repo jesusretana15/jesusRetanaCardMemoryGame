@@ -16,6 +16,9 @@ export class GameManager {
         this.contentContainer = div({id:'contentContainer',className:'contentContainer'},this.mainContainer);
         this.currentController = null;   
         this.menuController = null;     
+        this.clicks = null;
+        this.time = null;
+        this.score = null;
 
 
         this.mainContainer.addEventListener('on-loading-completed',(event) => {
@@ -26,10 +29,16 @@ export class GameManager {
             this.goto(event.detail.state)
         })
 
+        this.mainContainer.addEventListener('goto-end-state',(event) => {
+            this.clicks = event.detail.clicks;
+            this.time = event.detail.time;
+            this.score = event.detail.score;
+            this.goto(event.detail.state)
+        })
         
         // this.goto(LOADING_STATE)
         this.checkLocalStorage()
-        this.goto(LOADING_STATE)
+        this.goto(SAVING_GAME)
 
     }
 
@@ -57,8 +66,8 @@ export class GameManager {
                 this.menuController = new MenuController(this.contentContainer)
                 break;
             case SAVING_GAME:
-                this.navContainer.innerHTML = "GUARDANDO"
-                this.menuController = new SavingController(this.contentContainer)
+                this.navContainer.innerHTML = "PUNTAJE OBTENIDO"
+                this.menuController = new SavingController(this.contentContainer,this.clicks,this.time,this.score)
                 break;
             case RESULTS_STATE:
                 // this.menuController.delete();
@@ -126,3 +135,4 @@ export const DIFFICULTY_VERY_EASY = 4;
 export const DIFFICULTY_EASY = 8;
 export const DIFFICULTY_NORMAL = 10;
 export const DIFFICULTY_HARD = 12;
+ 

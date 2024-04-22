@@ -1,7 +1,5 @@
 .cardView{
     font-size: 50px;
-    width: 60px;
-    height: 100px;
     background-color: var(--first-color);
     display: flex;
     justify-content: center;
@@ -12,6 +10,27 @@
     cursor: pointer;
     user-select: none;
 }
+
+.cardView4{
+    height: 150px;
+    width: 85px;
+}
+
+.cardView8{
+    height: 110px;
+    width: 85px;
+}
+.cardView10{
+    height: 90px;
+    width: 90px;
+
+}
+.cardView12{
+    height: 70px;
+    width: 90px;
+
+}
+
 
 .cardView-Discovered{
     background-color: antiquewhite;

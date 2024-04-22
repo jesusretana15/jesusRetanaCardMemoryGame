@@ -1,4 +1,4 @@
-import { SAVING_GAME } from "../../managers/gameManager.js";
+import { GAME_CLICKS, GAME_SCORE, GAME_TIME, SAVING_GAME } from "../../managers/gameManager.js";
 import { Controller } from "../controller.js";
 import { CardView } from "./cardView.js";
 import { PlayService } from "./playService.js";
@@ -8,6 +8,7 @@ import { DifficultyView, PlayView } from "./playView.js";
 export class PlayController extends Controller{
      constructor(parent){
         super(parent);
+        
         this.view = new PlayView(parent,this);
         this.service = new PlayService(this);
         this.cards = null;
@@ -63,9 +64,12 @@ export class PlayController extends Controller{
                     this.saveScore()
                     window.clearInterval(this.gamePlayTimer);
                     this.view.timeTitle.innetHTTML = this.playTime
-                    let event = new CustomEvent('goto-state',{
+                    let event = new CustomEvent('goto-end-state',{
                         detail:{
-                            state:SAVING_GAME
+                            state:SAVING_GAME,   
+                            clicks: this.playClicks,
+                            time: this.playTime,
+                            score : (this.playClicks + this.playTime)            
                         },
                         bubbles:true,
                         cancelable:true,
@@ -133,7 +137,6 @@ export class PlayController extends Controller{
         console.log("save score")
         let difficulty = localStorage.getItem('difficulty')
         let user = localStorage.getItem('username')
-
         if (user === null) {
             console.log("not saving user")
         } else {
