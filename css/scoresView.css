@@ -1,0 +1,68 @@
+.topScoresView{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 60%;
+}
+
+
+.top3ViewTittle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, 0.671);
+    margin-top: 30PX;
+}
+
+.boxScore{
+    border: 1px solid black;
+}
+
+.top3View{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: center;
+    height: 25%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    flex-direction: column;
+    border: 2px solid  rgba(0, 0, 0, 0.671);
+    border-radius: 5px;
+    background-color:  rgba(232, 209, 181, 0.413);
+}
+
+.top3ViewDetails{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+    height: 33%;
+}
+
+.topInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.dataDetail{
+    color: rgba(0, 0, 0, 0.671);
+}
+
+.tittleDetail{
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.671);
+}
+
+.nameTop{
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.671);
+    font-weight: bolder;
+    font-size: x-large;
+}

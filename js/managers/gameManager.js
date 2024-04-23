@@ -38,7 +38,7 @@ export class GameManager {
         
         // this.goto(LOADING_STATE)
         this.checkLocalStorage()
-        this.goto(SAVING_GAME)
+        this.goto(SCORES_STATE)
 
     }
 
